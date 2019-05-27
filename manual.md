@@ -91,14 +91,14 @@ $ bundle install --path vendor/bundle
 If everything works without an error, you can now build a local version of the site by entering:
 
 ~~~ bash
-$ bundle exec jekyll serve
+$ bundle exec jekyll serve -d _site/proof
 ~~~
 
-If the site was rendered fine, copy the url from your terminal log and paste it into your browser. This url usually looks something like [`http://127.0.0.1:4000`](http://127.0.0.1:4000). At this point you should be looking at your very own working version of the {{ site.title }}.
+If the site was rendered fine, copy the url from your terminal log and paste it into your browser. This url usually looks something like [`http://127.0.0.1:4000/proof/`](http://127.0.0.1:4000/proof/). At this point you should be looking at your very own working version of the {{ site.title }}.
 
 Once the writing environment is set up:
 - save `the-twisted-cubic.md` in the `_posts` directory
-- open [`http://127.0.0.1:4000/proof/posts/the-twisted-cubic/`](http://127.0.0.1:4000/proof/posts/the-twisted-cubic/)
+- open [`http://127.0.0.1:4000/proof/the-twisted-cubic/`](http://127.0.0.1:4000/proof/the-twisted-cubic/)
 - check that everything rendered correctly
 - enter the following commands to make a new branch:
 ~~~ bash
