@@ -1,0 +1,17 @@
+---
+sitemap: false
+---
+
+$masthead-font: "Playfair Display SC", serif;
+$main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$heading-font: sans-serif;
+$regular-font-size: 20px;
+
+$heading-color: #404040;
+$text-color: #454545;
+$link-color: #841212;
+
+@use "theme";
+@use "colors";
+@use "proof";
+@use "syntax";
