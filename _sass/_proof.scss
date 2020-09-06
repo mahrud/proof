@@ -5,7 +5,7 @@
  */
 
 body {
-  counter-reset: h2 theorem lemma problem proposition conjecture corollary definition example exercise remark note;
+  counter-reset: section subsection theorem lemma problem proposition conjecture corollary definition example exercise remark note;
 }
 
 // FIXME add starred versions
@@ -55,16 +55,15 @@ body {
 
 h2.label:before {
   margin-right: 1em;
-  content: counter(h2) "  ";
-  counter-increment: h2;
-  counter-reset: h3;
+  content: counter(section) "  ";
+  counter-increment: section;
+  counter-reset: subsection theorem lemma problem proposition conjecture corollary definition example exercise remark note;
 }
 
-// FIXME: numbering doesn't work
 h3.label:before {
   margin-right: 0.8em;
-  content: counter(h2) "." counter(h3) "  ";
-  counter-increment: h3;
+  content: counter(section) "." counter(subsection) "  ";
+  counter-increment: subsection;
 }
 
 

@@ -9,3 +9,9 @@ serve:
 build:
 	rm -rf _site
 	bundle exec jekyll build -d _site/proof/
+
+install:
+	gem install jekyll
+	gem install bundler
+	bundle config set path 'vendor/bundle'
+	bundle install

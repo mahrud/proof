@@ -83,15 +83,13 @@ First, follow the guide for your operating system [here](https://jekyllrb.com/do
 ~~~ bash
 $ git clone {{ page.repository }}.git proof
 $ cd proof
-$ gem install jekyll
-$ gem install bundler
-$ bundle install --path vendor/bundle
+$ make install
 ~~~
 
 If everything works without an error, you can now build a local version of the site by entering:
 
 ~~~ bash
-$ bundle exec jekyll serve -d _site/proof
+$ make serve
 ~~~
 
 If the site was rendered fine, copy the url from your terminal log and paste it into your browser. This url usually looks something like [`http://127.0.0.1:4000/proof/`](http://127.0.0.1:4000/proof/). At this point you should be looking at your very own working version of the {{ site.title }}.
