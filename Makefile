@@ -1,14 +1,14 @@
-all: serve
+all:	serve
 
-check: build
-	bundle exec htmlproofer ./_site/ --only-4xx --check-html --disable-external --empty-alt-ignore # --check-favicon
+check:; bundle exec jekyll build -d _site/proof/
+	bundle exec htmlproofer ./_site
 
-serve:
-	bundle exec jekyll serve -d _site/proof/
+serve:;	bundle exec jekyll serve -d _site/proof/
 
-build:
-	rm -rf _site
-	bundle exec jekyll build -d _site/proof/
+clean:;	rm -rf _site/*
+
+build:	clean
+	bundle exec jekyll build -s . -d _site/proof/
 
 install:
 	gem install jekyll

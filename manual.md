@@ -6,7 +6,9 @@ toc: [background, write, review, publish]
 repository: https://github.com/mahrud/proof
 ---
 
-This manual is based on a documentation written by [Alex Gil](http://laic.columbia.edu/author/2728293031/) with beginners in mind, but has the necessary information for more seasoned conspirators. We will walk through writing a sample blog post titled *The Twisted Cubic*.
+This manual is based on a documentation written by [Alex Gil] with beginners in mind, but has the necessary information for more seasoned conspirators. We will walk through writing a sample blog post titled *The Twisted Cubic*.
+
+[Alex Gil]: https://github.com/elotroalex
 
 ## Background
 
@@ -105,7 +107,7 @@ $ git add _posts/the-twisted-cubic.md
 $ git commit -m "New Entry: The Twisted Cubic"
 $ git push origin
 ~~~
-- open [this page]({{ page.repository }}/compare/master...master) in a browser
+- open [this page]({{ page.repository }}/compare/main...main) in a browser
 - change the second drop down menu to `compare: post/the-twisted-cubic`
 - make a new pull request
 
