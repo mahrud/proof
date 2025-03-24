@@ -5,6 +5,8 @@
  * Learn more at https://github.com/minicomp/ed and https://github.com/poole/lanyon.
  */
 
+@use 'config';
+
 /*
  * General
  *
@@ -25,19 +27,19 @@ body {
 }
 
 html {
-  font-family: $main-font;
+  font-family: config.$main-font;
   font-size: 16px;
   line-height: 1.5;
 }
 
 @media (min-width: 38em) {
   html {
-    font-size: $regular-font-size;
+    font-size: config.$regular-font-size;
   }
 }
 
 body {
-  color: $text-color;
+  color: config.$text-color;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -50,10 +52,10 @@ body {
 
 /* Headings*/
 h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font;
+  font-family: config.$heading-font;
   margin-bottom: .5rem;
   font-weight: 300;
-  color: $heading-color;
+  color: config.$heading-color;
   letter-spacing: -.025rem;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
@@ -144,7 +146,7 @@ ul, ol {
 
 /* Links*/
 a, .text-title a {
-  color: $link-color;
+  color: config.$link-color;
   text-decoration: none;
 }
 
@@ -167,14 +169,14 @@ hr {
 /* Search Highlihting*/
 mark {
   color: white;
-  background-color: $link-color;
+  background-color: config.$link-color;
 }
 
 /* Quotes*/
 blockquote {
   padding: 0rem 1.5rem 0rem 2rem;
   margin: 0 0 20px 0;
-  color: $text-color;
+  color: config.$text-color;
   border-left: none;
   font-style: italic;
 }
@@ -196,7 +198,7 @@ li.attribution {
   list-style: none;
   padding: 0rem 1.5rem 0rem 2rem;
   margin: 0 0 20px 0;
-  color: $text-color;
+  color: config.$text-color;
 }
 
 /* Images*/
@@ -249,20 +251,20 @@ tbody tr:nth-child(odd) th {
 }
 
 .masthead-title a {
-  color: $link-color;
+  color: config.$link-color;
 }
 
 .masthead-title small {
-  font-family: $main-font;
+  font-family: config.$main-font;
   font-size: .85rem;
   font-weight: 300;
-  color: $text-color;
+  color: config.$text-color;
   letter-spacing: .05rem;
-  font-family: $masthead-font;
+  font-family: config.$masthead-font;
 }
 
 h3.masthead-title {
-  font-family: $masthead-font;
+  font-family: config.$masthead-font;
   font-size: 1.5rem;
   margin-top: 2px;
 }
@@ -296,7 +298,7 @@ h3.masthead-title {
 }
 
 .page-title {
-  color: $heading-color;
+  color: config.$heading-color;
   margin-top: 0;
 }
 
@@ -341,7 +343,7 @@ h3.masthead-title {
 
 /* Sidebar content */
 .sidebar {
-  background-color: $link-color;
+  background-color: config.$link-color;
 }
 
 .sidebar a {
