@@ -1,16 +1,75 @@
 /*
  * Proof Theorem Environments
- * Based on amsthm package: https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/Theorems.html
- * and https://golem.ph.utexas.edu/wiki/instiki/show/Theorems
+ * Based on amsthm package:
+ * https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/Theorems.html and
+ * https://golem.ph.utexas.edu/wiki/instiki/show/Theorems
  */
 
-body {
-  counter-reset: section subsection theorem lemma problem proposition conjecture corollary definition example exercise remark note;
+// Counters are initialized inside each <article> tag
+// h1 is reserved for the main article (not numbered)
+article {
+  counter-reset: section subsection refno eqno;
 }
 
-// FIXME add starred versions
-.theorem, .lemma, .proposition, .corollary {
+// Each h2 pairs with one <section> tag (numbered)
+// subsection and theorem numbers are reset here
+h2.label:before {
+  margin-right: 1em;
+  content: counter(section) "  ";
+  counter-increment: section;
+  counter-reset: subsection refno;
+}
+
+h3.label:before {
+  margin-right: 0.8em;
+  content: counter(section) "." counter(subsection) "  ";
+  counter-increment: subsection;
+}
+
+// e.g. Equation 15
+@mixin counter-in-article($name) {
+  content: "(" counter($name) ")";
+  counter-increment: $name;
+}
+
+// e.g. Lemma 2.4
+@mixin counter-in-section($name) {
+  content: " " counter(section) "." counter($name) ".";
+  counter-increment: $name;
+}
+
+.claim       .label:after,
+.conjecture  .label:after,
+.corollary   .label:after,
+.definition  .label:after,
+.example     .label:after,
+.exercise    .label:after,
+.lemma       .label:after,
+.notation    .label:after,
+.note        .label:after,
+.problem     .label:after,
+.proposition .label:after,
+.question    .label:after,
+.remark      .label:after,
+.theorem     .label:after { @include counter-in-section(refno); }
+.equation    .label:after { @include counter-in-article(eqno);  }
+
+// plain: italic text, extra space above and below
+.theorem, .lemma, .corollary, .proposition, .conjecture {
   font-style: italic;
+  margin: 1em 0 1em;
+}
+
+// definition: upright text, extra space above and below
+.definition {
+  font-style: normal;
+  margin: 1em 0 1em;
+}
+
+// remark: upright text, no extra space above or below
+.remark {
+  font-style: normal;
+  margin: 0.7em 0 0.7em;
 }
 
 .label {
@@ -18,13 +77,15 @@ body {
   font-weight: bold;
 }
 
+.label:after { content: "."; }
+
 .label* {
   font-style: normal;
   font-weight: bold;
 }
 
 .proof .label {
-  font-style: italic;
+  font-style: normal; // optionally, italic
 //  font-weight: normal;
 //  font-family: "Playfair Display SC", serif;
 //  font-size: medium;
@@ -34,38 +95,6 @@ body {
   content: " ■";
   text-align: right;
 }
-
-@mixin counter($name) {
-  content: " " counter(section) "." counter($name) ".";
-  counter-increment: $name;
-}
-
-.label:after { content: "."; }
-.theorem     .label:after { @include counter(theorem);     }
-.lemma       .label:after { @include counter(lemma);       }
-.problem     .label:after { @include counter(problem);     }
-.proposition .label:after { @include counter(proposition); }
-.conjecture  .label:after { @include counter(conjecture);  }
-.corollary   .label:after { @include counter(corollary);   }
-.definition  .label:after { @include counter(definition);  }
-.example     .label:after { @include counter(example);     }
-.exercise    .label:after { @include counter(exercise);    }
-.remark      .label:after { @include counter(remark);      }
-.note        .label:after { @include counter(note);        }
-
-h2.label:before {
-  margin-right: 1em;
-  content: counter(section) "  ";
-  counter-increment: section;
-  counter-reset: subsection theorem lemma problem proposition conjecture corollary definition example exercise remark note;
-}
-
-h3.label:before {
-  margin-right: 0.8em;
-  content: counter(section) "." counter(subsection) "  ";
-  counter-increment: subsection;
-}
-
 
 /*
  * ED SPECIAL LAYOUTS, modified
