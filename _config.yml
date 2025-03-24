@@ -26,9 +26,15 @@ collections:
 markdown: kramdown
 
 kramdown:
+  # we use KaTeX
+  math_engine: null
+  # ↩ followed by a symbol to prevent emoji conversion
   footnote_backlink: "&#x21a9;&#xfe0e;"
-  enable_coderay: false
-#  math_engine: null # pending https://github.com/github/pages-gem/pull/545
+  # don't make typographical conversions like >> to »
+  gfm_quirks: [paragraph_end, no_auto_typographic]
+  # disables syntax highlighter
+  #syntax_highlighter_opts:
+  #  disable: true
 
 # Exclusions from the final site
 exclude:
